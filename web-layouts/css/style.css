@@ -1,0 +1,361 @@
+:root {
+	--d-color: rgb(93, 176, 179);
+  --d-color-dark: rgb(43, 103, 105);
+  --blue-dark: rgb(10, 119, 189);
+	--blue: #eef8fe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.header {
+  color: #fff;
+  height: 100px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(43, 103, 105);
+}
+
+.main {
+  display: flex;
+  height: calc(100% - 100px);
+}
+
+.main nav {
+  flex: 0 0 15%;
+  background-color: cadetblue;
+}
+
+.main article {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #fbfbfb;
+}
+
+
+
+article .title {
+  font-size: 2rem;
+  color: var(--d-color-dark);
+}
+
+article .subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.item-form {
+  padding: 2rem;
+  background-color: #fff;
+  border-bottom: 3px solid var(--d-color);
+  transition: all 0.5s;
+}
+
+.item-form:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.item-form + .item-form {
+  margin-top: 1.5rem;
+}
+
+.form-title,
+.item-form > p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--d-color);
+  margin-bottom: 0.25rem;
+}
+
+.form-title {
+  display: block;
+}
+
+.item-form-inline {
+  gap: 2rem;
+  display: flex;
+}
+
+.item-form-inline > label {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+input[type=text]:focus {
+  outline-color: var(--d-color);
+}
+
+button[type=submit] {
+  border: none;
+  color: #fff;
+  line-height: 3;
+  padding: 0 2rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+  font-weight: 600;
+  transition: all 0.5s;
+  background-color: var(--d-color);
+}
+
+button[type=submit]:hover {
+  background-color: var(--d-color-dark);
+}
+
+.table-container {
+  min-width: 60%;
+	margin-top: 2rem;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 15px solid #fff;
+  box-shadow: rgba(10, 119, 189, 0.1) 0px 10px 50px;
+}
+
+.table-container > .title {
+  line-height: 2;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  background: #ffffff;
+	border-collapse: collapse;
+}
+
+table tr {
+  color: #fff;
+  line-height: 3;
+}
+
+table td {
+  color: #333;
+  padding: 0 20px;
+  text-align: right;
+  transition: all 0.2s;
+  background-color: white;
+  border: 1px solid var(--blue);
+}
+
+.table-container thead tr {
+  background-color: var(--d-color-dark);
+}
+
+.table-container tbody tr:nth-child(odd) td {
+  background-color: rgba(0, 0, 0, 0.025);
+}
+
+.table-container tbody tr:nth-child(odd) td:not(:last-child) {
+  border-right: 1px solid #fff;
+}
+
+.table-container tbody tr:hover td {
+  background-color: var(--blue);
+}
+
+.table-container tbody td {
+  vertical-align: middle;
+}
+
+.table-container tr td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+ 
+.table-container tfoot td {
+  cursor: zoom-in;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--d-color-dark);
+  background-color: var(--blue);
+}
+
+.copyright {
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--d-color-dark);
+}
+
+.content {
+  gap: 40px;
+  display: flex;
+  margin-top: 30px;
+  align-items: start;
+}
+
+.content p + p {
+  margin-top: 20px;
+}
+
+[class*=section-image__] {
+  display: block;
+  overflow: hidden;
+  min-width: 120px;
+  min-height: 70vh;
+  max-height: 100vh;
+  position: relative;
+  transition: all 0.5s ease-in;
+}
+
+[class*=section-image__]:hover {
+  filter: grayscale(100%) blur(0.1rem);
+}
+
+.section-image__sobre {
+  background-image: url('../images/bg-sobre.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-image__relatorios {
+  background-image: url('../images/bg-relatorios.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-image__contato {
+  background-image: url('../images/bg-contato.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu {
+  color: #fff;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+}
+
+.menu > li + li {
+  border-top: 1px solid var(--d-color);
+}
+
+.menu > li > a {
+  color: #fff;
+  display: block;
+  line-height: 3;
+  font-weight: 600;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main nav {
+    flex: 0;
+  }
+  
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .menu > li + li {
+    border-top: 0;
+    border-left: 1px solid var(--d-color);
+  }
+
+  .menu > li {
+    flex: 1;
+  }
+  
+  .menu > li > a {    
+    flex: 1;
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .menu > li > a:hover {
+    background-color: var(--d-color);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+
+  .content {
+    gap: 20px;
+    margin-top: 15px;
+    flex-direction: column;
+  }
+
+  .table-container {
+    min-width: 100%;
+    overflow-x: auto;
+  }
+
+  table th,
+  table td {
+    white-space: nowrap;
+  }
+
+  .table-container thead tr th {
+    padding: 0 20px;
+  }
+
+  .item-form,
+  .item-form:hover {
+    padding: 0;
+    box-shadow: none;
+    border-bottom: none;
+    background-color: transparent;
+  }
+
+  [class*=section-image__] {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .section-image__sobre {
+    background-image: url('../images/bg-sobre__mobile.jpg');
+  }
+  
+  .section-image__relatorios {
+    background-image: url('../images/bg-relatorios__mobile.jpg');
+  }
+
+  .section-image__contato {
+    background-image: url('../images/bg-contato__mobile.jpg');
+  }
+}
